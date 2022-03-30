@@ -1,0 +1,93 @@
+# Seguindo o Initialization Wizard da forma apresentada #
+# no README.pt.md este é o documento gerado             #
+#-------------------------------------------------------#
+overwrite: true
+schema: 'https://countries.trevorblades.com/'
+documents: 'graphql/**/*.graphql'
+generates:
+  graphql/generated.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-document-nodes"
+#-------------------------------------------------------#
+# Você pode otimizar o código gerado com modificações   #
+# de plugins já instalados ou com a utilização de       #
+# outros plugins com finalizades ou pacotes específicos #
+#-------------------------------------------------------#
+# TypeScript React Apollo                               #
+# Com este plugin, além da operações graphql, o plugin  #
+# também vai gerar react hooks com o cliente apollo     #
+# utilizando o modelo use(*)Query e use(*)LazyQuery     #
+#                                                       #
+# generates:
+#   graphql/generated.ts
+#     plugins:
+#       - typescript
+#       - typescript-operations
+#       - typescript-react-apollo
+#                                                       #
+#       É necessário instalar os pacotes @apollo/client #
+#       e @graphql-apollo/codegen                       #
+#-------------------------------------------------------#
+# Modificações                                          #
+#                                                       #
+# generates:
+#   graphql/generated.ts:
+#     config:
+#-------------------------------------------------------#
+#       documentMode: documentNode
+#                                                       #
+#       isso gera o código com operações pré-computadas #
+#       em objetos estáticos. Isso pula a etapa de      #
+#       "parsing" da string em tempo de execução,       #
+#       melhorando a performance da primeira requisição #
+#-------------------------------------------------------#
+#       scalars:
+#         Coordinate: [number, number]
+#         Polygon: [number, number][]                  
+#         UUID: string                   
+#         Long: number                                  
+#                                                       #
+#       em alguns casos o plugin não sabe atribuir o    #
+#       tipo correto aos Scalars, essa opção permite    #
+#       sobrescrever os scalars para uma tipagem melhor #
+#       Funciona apenas com scalars definidos no Schema #
+#       adicionar scalars que não pertencem ao schema   #
+#       gera um erro durante a execução do script       #
+#-------------------------------------------------------#
+#     plugins:
+#       - typescript
+#       - typescript-operations
+#       - typescript-document-nodes
+#-------------------------------------------------------#
+# Injeção de código                                     #
+#                                                       #
+# É possível injetar código no arquivo gerado.          #
+# Combinado com a etapa anterior de Scalars, é possível #
+# Gerar e exportar tipos para os Scalars                #
+#                                                       #
+# generates:
+#   graphql/generated.ts:
+#     config:
+#       documentMode: documentNode
+#       scalars:
+#         Coordinate: Coordinate
+#         Polygon: Polygon
+#         UUID: string
+#         Long: number
+#     plugins:
+#       - typescript
+#       - typescript-operations
+#       - typescript-document-nodes
+#       - add:
+#           content:
+#             - 'export type Coordinate = [number, number];'
+#             - 'expory type Polygon = Coordinate[];'
+#                                                       #
+#       Dessa forma é possível importar os tipos        #
+#       'Coordinate' e 'Polygon' de forma fácil.        #
+#       É necessário instalar o pacote                  #
+#       @graphql-codegen/add                            #
+#-------------------------------------------------------#
+# Para um guia completo de configuração consulte: https://www.graphql-code-generator.com/docs/config-reference/codegen-config #
