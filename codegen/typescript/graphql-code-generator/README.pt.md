@@ -120,7 +120,7 @@ npm run gql
 
 ## Configuração Avançada
 
-Para uma configuração avançada veja [codegen.yml](example/codegen.yml)
+Para uma configuração avançada veja [codegen.pt.yml](example/codegen.pt.yml)
 
 lembre-se de consultar o [hub de plugins](https://www.graphql-code-generator.com/plugins) para uma lista e documentação completa dos plugins
 
