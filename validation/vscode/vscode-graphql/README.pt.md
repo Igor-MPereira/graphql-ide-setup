@@ -17,6 +17,8 @@ documents: <glob pattern com arquivos>
 
 Reinicie seu visual studio code e a extensão agora fará autocomplete, formatação, e validação de schema.
 
+> *nota: esse arquivo de configuração pode ser utilizado com qualquer plugin que use __[graphql-config](https://www.graphql-config.com/)__*
+
 ## Configuração Avançada
 
 Para configuração mais avançadas consulte a [página da extensão](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql) e o [repositório](https://github.com/graphql/vscode-graphql)
