@@ -79,7 +79,7 @@ generates:
 #     plugins:
 #       - typescript
 #       - typescript-operations
-#       - typescript-document-nodes
+#       - typescript-react-apollo
 #       - add:
 #           content:
 #             - 'export type Coordinate = [number, number];'
