@@ -1,6 +1,6 @@
 # GraphQL Setup
 
-GraphQL Setup Guides For Validation On IDEs/Text Editors And Code Generation
+Collection Of GraphQL Setup Guides For Validation On IDEs/Text Editors And Code Generation
 
 ## [Code Generation](codegen/README.md)
 
